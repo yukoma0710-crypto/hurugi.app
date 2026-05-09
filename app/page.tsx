@@ -1,65 +1,57 @@
-import Image from "next/image";
+import React from 'react';
+import { Search, MapPin } from 'lucide-react';
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <div className="min-h-screen bg-[#F8F5F2] text-[#2C2420]">
+      <nav className="flex justify-between items-center px-8 py-6 bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <h1 className="text-2xl font-black tracking-tighter text-[#5D4037]">HURUGI HUB.</h1>
+        <div className="space-x-8 font-medium text-sm">
+          <a href="#" className="hover:text-[#A67C52] transition">ショップ検索</a>
+          <a href="#" className="bg-[#5D4037] text-white px-5 py-2 rounded-full hover:bg-[#3E2723] transition">
+            掲載希望の店舗様へ
+          </a>
+        </div>
+      </nav>
+
+      <header className="relative h-[60vh] flex items-center justify-center text-white overflow-hidden">
+        <div className="absolute inset-0 bg-black/40 z-10" />
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=2000')] bg-cover bg-center" />
+        <div className="relative z-20 text-center px-4">
+          <h2 className="text-5xl font-serif font-bold mb-6 text-white">一着の、その先へ。</h2>
+          <p className="text-lg max-w-2xl mx-auto font-light leading-relaxed mb-8">
+            店主の「こだわり」という魂が込められた一着を探す旅。
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </header>
+
+      <section className="py-20 bg-white px-8">
+        <div className="max-w-6xl mx-auto">
+          <h3 className="text-3xl font-serif font-bold mb-12">Pick Up Shops</h3>
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="group cursor-pointer">
+              <div className="relative h-80 mb-4 overflow-hidden rounded-2xl">
+                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=800')] bg-cover group-hover:scale-110 transition duration-500" />
+                <div className="absolute top-4 left-4 bg-white/90 px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
+                  <MapPin size={12} /> 下北沢
+                </div>
+              </div>
+              <h4 className="text-xl font-bold mb-1">Old Soul Antiques</h4>
+              <p className="text-gray-500 text-sm">50年代アメリカのワークウェア。歴史を纏う一着を。</p>
+            </div>
+            <div className="group cursor-pointer">
+              <div className="relative h-80 mb-4 overflow-hidden rounded-2xl">
+                <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1470309638588-2ff92e16d004?q=80&w=800')] bg-cover group-hover:scale-110 transition duration-500" />
+                <div className="absolute top-4 left-4 bg-white/90 px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
+                  <MapPin size={12} /> 高円寺
+                </div>
+              </div>
+              <h4 className="text-xl font-bold mb-1">Retro Modern Tokyo</h4>
+              <p className="text-gray-500 text-sm">ユーロ古着のリメイク。新しい価値を古着に。</p>
+            </div>
+          </div>
         </div>
-      </main>
+      </section>
     </div>
   );
 }
